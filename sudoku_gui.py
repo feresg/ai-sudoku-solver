@@ -137,12 +137,3 @@ class GUI(tk.Tk):
 # Open UI
 app = GUI()
 app.mainloop()
-
-
-
-
-
-
-
-
-
