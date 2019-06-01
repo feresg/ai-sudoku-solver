@@ -110,7 +110,6 @@ class GUI(tk.Tk):
 		problem = Problem(board, method)
 		solver = Solver(problem, algorithm)
 		solution = solver.solve()
-		print(solution)
 		# Display result
 		for row in range(9):
 			for col in range(9):

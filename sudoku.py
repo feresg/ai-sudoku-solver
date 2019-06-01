@@ -127,7 +127,6 @@ class Problem:
 					mrv = min(row_mrv, col_mrv, quad_mrv)
 					mrv_vals[(row, col)] = mrv
 		row, col = sorted(mrv_vals, key=mrv_vals.get)[0]
-		# print(row, col)
 		return {
 			"row": row,
 			"col": col,
@@ -162,7 +161,6 @@ class Problem:
 		spot = self.get_spot(state) # Get first empty spot on board
 		row, col = spot["row"], spot["col"]
 		heuristic = spot.get("h") if spot.get("h") else 9
-		# print("ROW: {} COL: {} H: {}".format(row, col, heuristic))
 		# Remove spot's invalid options
 		options = self.filter_row(state, row)
 		options = self.filter_col(options, state, col)

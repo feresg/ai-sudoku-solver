@@ -5,8 +5,8 @@ Sudoku Solver
 
 ![Screenshot](https://github.com/feresg/ai-sudoku-solver/raw/master/Screenshot.png)
 
-this sudoku solver for an AI class uses:
-    - Depth First Search (DFS): Blind method
+this sudoku solver uses
+    - Depth First Search (DFS): Blind method.
     - Best First Search (BestFS): Informed method that uses the Minimum Remaining Values (MRV) heuristic
 
 Environment
