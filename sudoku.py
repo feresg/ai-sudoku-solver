@@ -114,7 +114,7 @@ class Problem:
 
 	# Return first empty empty spot with minimum remaining values
 	def get_spot_heuristic(self, state):
-		mrv_vals = {}
+		best_row, best_col, best_mrv = 0, 0, 9
 		for row in range(self.type):
 			for col in range(self.type):
 				if state[row][col] == 0:
@@ -125,12 +125,12 @@ class Problem:
 					quad_mrv = len(list(filter(lambda a: a == 0, self.get_quad(state, quad))))
 					# get minimum remaining value
 					mrv = min(row_mrv, col_mrv, quad_mrv)
-					mrv_vals[(row, col)] = mrv
-		row, col = sorted(mrv_vals, key=mrv_vals.get)[0]
+					if mrv < best_mrv:
+						best_row, best_col, best_mrv = row, col, mrv
 		return {
-			"row": row,
-			"col": col,
-			"h": mrv_vals[(row, col)]
+			"row": best_row,
+			"col": best_col,
+			"h": best_mrv
 		}
 
 	# Filter valid values based on row
